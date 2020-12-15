@@ -1,3 +1,9 @@
+<?php
+  if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+    include('Page/' . $page . '.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href='Page/about.php'>About</a>
+    <button onclick="window.location.href='index.php?page=about'">About</button>
     <form method="POST" action="Page/upload.php" enctype="multipart/form-data">
         <label for="myfile">Select image:</label> 
         <input type="file" id="file" name="file" onchange="change(event)" multiple><br>
